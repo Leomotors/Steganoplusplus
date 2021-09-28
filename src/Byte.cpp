@@ -1,6 +1,7 @@
 #include "Byte.hpp"
 
 #include <array>
+
 std::array<bool, BITS> toByte(char _c)
 {
     int c = (int)_c;
