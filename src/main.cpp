@@ -25,6 +25,16 @@ int main(int argc, char *argv[])
     }
     message[message.size() - 1] = (char)0;
 
+    if (std::string(argv[2]).starts_with("--stdin"))
+    {
+        message = "";
+        std::string temp;
+        while (std::getline(std::cin, temp))
+            message += temp + '\n';
+        message.pop_back();
+        message += (char)0;
+    }
+
     int position{0};
     for (char c : message)
     {

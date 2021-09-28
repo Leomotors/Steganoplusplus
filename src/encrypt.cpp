@@ -16,6 +16,6 @@ void writeBit(cv::Mat &image, int position, bool bit)
 
 std::pair<cv::Point, int> translatePos(cv::Mat &image, int position)
 {
-    return {cv::Point((position / 3) / image.cols, (position / 3) % image.cols),
+    return {cv::Point((position / 3) % image.cols, (position / 3) / image.cols),
             position % 3};
 }

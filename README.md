@@ -21,6 +21,10 @@ My Implementation of Steganography
 
 <img src="./example/example.png" width="600px">
 
+### You can even Encrypt A File!
+
+<img src="./example/srcmain.png" width="600px">
+
 ## 🌿 Dependencies
 
 - OpenCV 4.5.3
@@ -38,5 +42,7 @@ sudo make install
 ## 📚 Usage
 
 `Sgpp "File Name" Message` to encrypt
+
+You can also use `Sgpp "File Name" --stdin` to get input from stdin (Like Pipe)
 
 `Sgpp "File Name"` to decrypt

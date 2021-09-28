@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(Steganoplusplus VERSION 1.0.0)
+project(Steganoplusplus VERSION 1.0.2)
 
 set(EXECUTABLE_NAME "Sgpp")
 
@@ -25,17 +25,10 @@ target_link_libraries(${EXECUTABLE_NAME} ${OpenCV_LIBS})
 target_include_directories(${EXECUTABLE_NAME} PRIVATE ${CMAKE_CURRENT_BINARY_DIR}/gen)
 
 # CPP STANDARD
-set_property(TARGET ${EXECUTABLE_NAME} PROPERTY CXX_STANDARD 17)
+set_property(TARGET ${EXECUTABLE_NAME} PROPERTY CXX_STANDARD 20)
 
 # Install
 install(
     TARGETS ${EXECUTABLE_NAME}
     RUNTIME DESTINATION /usr/local/bin
 )
-
-if(CMAKE_BUILD_TYPE MATCHES Debug)
-    add_custom_command(TARGET ${EXECUTABLE_NAME} POST_BUILD
-        COMMAND mv ${EXECUTABLE_NAME} ..
-        COMMENT "[Debug]: Moving Executable to Project Root..."
-    )
-endif()
