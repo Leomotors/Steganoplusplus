@@ -18,7 +18,7 @@ include_directories(src)
 # Compiling
 add_executable(${EXECUTABLE_NAME} ${APP_SRC})
 
-set(CMAKE_CXX_FLAGS "-Wall -Wextra -Wno-unused-result -Wno-unused-variable -O3 -lm -pthread")
+set(CMAKE_CXX_FLAGS "-Wall -Wextra -O3 -lm")
 
 # Linking Libraries for main
 target_link_libraries(${EXECUTABLE_NAME} ${OpenCV_LIBS})
