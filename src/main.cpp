@@ -27,23 +27,17 @@ int main(int argc, char *argv[])
 
     if (std::string(argv[2]).starts_with("--stdin"))
     {
-        message = "";
+        std::string message2 = "";
         std::string temp;
         while (std::getline(std::cin, temp))
-            message += temp + '\n';
-        message.pop_back();
-        message += (char)0;
+            message2 += temp + '\n';
+        message2.pop_back();
+        message2 += (char)0;
+        if (message2.size())
+            message = message2;
     }
 
-    int position{0};
-    for (char c : message)
-    {
-        for (bool bit : toByte(c))
-        {
-            writeBit(image, position, bit);
-            position++;
-        }
-    }
+    encryptImage(image, message);
 
     cv::imwrite("Output.png", image);
 }

@@ -19,3 +19,16 @@ std::pair<cv::Point, int> translatePos(cv::Mat &image, int position)
     return {cv::Point((position / 3) % image.cols, (position / 3) / image.cols),
             position % 3};
 }
+
+void encryptImage(cv::Mat &image, std::string message)
+{
+    int position{0};
+    for (char c : message)
+    {
+        for (bool bit : toByte(c))
+        {
+            writeBit(image, position, bit);
+            position++;
+        }
+    }
+}
